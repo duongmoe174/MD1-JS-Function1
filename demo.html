@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo tính bình phương</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập số" id="number">
+<button id="btnSquare" onclick="calculate()">Tính bình phương</button>
+<p id="result"></p>
+<script>
+    function square(number) {
+      var result = number*number;
+      return result;
+    }
+    function calculate() {
+        let a = Number(document.getElementById("number").value);
+        var result = square(a)
+        document.getElementById("result").innerText = "bình phương = " + result;
+    }
+</script>
+</body>
+</html>
