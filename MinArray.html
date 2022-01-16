@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị nhỏ nhất trong mảng</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập phần tử" id="txtArray">
+<input type="button" id="btnAddElement" value="Add" onclick="addElementInArray()">
+<input type="button" id="btnDisplayElement" value="Display" onclick="displayElement()">
+<p id="resultAddElement"></p>
+<p id="resultDisplayElement"></p>
+
+<div>
+    <button id="btnMinArray" onclick="findMinArray()">Find Min</button>
+    <p id="resultMinArray"></p>
+</div>
+<script>
+    var array = Array();
+    var x = 0;
+    function addElementInArray() {
+        array[x] = document.getElementById("txtArray").value;
+        document.getElementById("resultAddElement").innerText = "phần tử: " + array[x] + " đã được thêm vào tại chỉ số thứ: " + x;
+        x++;
+        document.getElementById("txtArray").value = "";
+    }
+    function displayElement() {
+        let y = "Các phần tử của mảng là: "
+        for (let i = 0; i <array.length ; i++) {
+            y += array[i] + "  ";
+        }
+        document.getElementById("resultDisplayElement").innerText = y;
+    }
+
+    function findMin(arr) {
+        if (arr.length==0) {
+            alert("mảng rỗng");
+        }
+        let min = arr[0];
+        for (let i = 0; i <arr.length ; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+    function findMinArray () {
+       let min = findMin(array);
+       document.getElementById("resultMinArray").innerText = "Phần tử nhỏ nhất trong mảng là: " + min;
+    }
+</script>
+</body>
+</html>
